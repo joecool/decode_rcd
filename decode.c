@@ -18,8 +18,15 @@ int main(int argc, char* argv[]) {
        return -1;
      }
 
-
-     # test push
+     PDATA header = malloc(sizeof(DATA));
+     while(!feof(f)) {
+       int len = fread(header, sizeof(DATA), 1, f);
+       if(len != sizeof(DATA)) {
+         printf("Get header failed.\n");
+         break;
+       }
+     }
+     free(header);
      fclose(f);
   } else {
     printf("Please input file name\n");
