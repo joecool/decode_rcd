@@ -81,4 +81,43 @@ decode_items funcs[28] = {
   decode_062_340,
 };
 
+char* decode_062_390_TAG(char* data);
+char* decode_062_390_CSN(char* data);
+char* decode_062_390_IFI(char* data);
+char* decode_062_390_FCT(char* data);
+char* decode_062_390_TAC(char* data);
+char* decode_062_390_WTC(char* data);
+char* decode_062_390_DEP(char* data);
+char* decode_062_390_DST(char* data);
+char* decode_062_390_RDS(char* data);
+char* decode_062_390_CFL(char* data);
+char* decode_062_390_CTL(char* data);
+char* decode_062_390_TOD(char* data);
+char* decode_062_390_AST(char* data);
+char* decode_062_390_STS(char* data);
+char* decode_062_390_STD(char* data);
+char* decode_062_390_STA(char* data);
+char* decode_062_390_PEM(char* data);
+char* decode_062_390_PEC(char* data);
+
+decode_items funcs_390[18] = {
+    decode_062_390_TAG,
+    decode_062_390_CSN,
+    decode_062_390_IFI,
+    decode_062_390_FCT,
+    decode_062_390_TAC,
+    decode_062_390_WTC,
+    decode_062_390_DEP,
+    decode_062_390_DST,
+    decode_062_390_RDS,
+    decode_062_390_CFL,
+    decode_062_390_CTL,
+    decode_062_390_TOD,
+    decode_062_390_AST,
+    decode_062_390_STS,
+    decode_062_390_STD,
+    decode_062_390_STA,
+    decode_062_390_PEM,
+    decode_062_390_PEC,
+};
 #endif
