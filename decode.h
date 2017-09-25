@@ -50,9 +50,9 @@ char* decode_062_340(char* data);
 
 typedef char* (*decode_items)(char *);
 
-decode_items funcs[28] = {
+static decode_items funcs[28] = {
   decode_062_010,
-  NULL,
+  0,   /* Should use NULL, but could not be recognized in mingw */
   decode_062_015,
   decode_062_070,
   decode_062_105,
@@ -100,7 +100,7 @@ char* decode_062_390_STA(char* data);
 char* decode_062_390_PEM(char* data);
 char* decode_062_390_PEC(char* data);
 
-decode_items funcs_390[18] = {
+static decode_items funcs_390[18] = {
     decode_062_390_TAG,
     decode_062_390_CSN,
     decode_062_390_IFI,
