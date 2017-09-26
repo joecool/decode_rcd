@@ -14,9 +14,11 @@ int main(int argc, char* argv[]) {
      printf("port is %s\n", file_name);
 
      struct sockaddr_in si;
+     struct sockaddr_in ci;
+     socklen_t ci_len = sizeof(ci);
 
-     int s, i, recv_len;
-     char buf[65536];
+     int s, recv_len;
+     unsigned char buf[65536];
 
      //create a UDP socket
      if ((s=socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1)
@@ -43,7 +45,7 @@ int main(int argc, char* argv[]) {
      while(1)
      {
          //try to receive some data, this is a blocking call
-         if ((recv_len = recv(s, buf, 65536, 0) == -1))
+         if ((recv_len = recvfrom(s, buf, 65535, 0, (struct sockaddr *)&ci, &ci_len)) == -1)
          {
              printf("recv error.\n");
              return -1;
@@ -51,7 +53,7 @@ int main(int argc, char* argv[]) {
          if(recv_len) decode((PDATA)buf, recv_len);
      }
 
-     close(s);
+//     close(s);
 
   } else {
     printf("Please input port number\n");
