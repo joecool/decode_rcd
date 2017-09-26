@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
 }
 
 int decode(PDATA data, int length) {
-  printf("\n========================= Message received =========================n\n");
+  printf("\n========================= Message received =========================\n\n");
   printf("seconds = %d, ", data->seconds);
   printf("msc = %d, ", data->mseconds);
   printf("length = %d, ", data->length);
